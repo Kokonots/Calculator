@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace Calculator.Utilities
 {
     // Games like to use Singletons.
     abstract class Singleton<T> where T : Singleton<T>, new()

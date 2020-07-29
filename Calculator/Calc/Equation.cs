@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Diagnostics;
 
-namespace Calculator
+using Calculator.Utilities;
+
+namespace Calculator.Calc
 {
     enum EquationAnswer { Number, DivideBy0 }
 

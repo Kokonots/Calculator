@@ -46,18 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input Output\ClipboardManager.cs" />
-    <Compile Include="Input Output\ClipboardTextBoxController.cs" />
-    <Compile Include="Input Output\EquationTextBoxController.cs" />
-    <Compile Include="Events\NumberEvents.cs" />
-    <Compile Include="Global\Constants.cs" />
-    <Compile Include="Math\DisplayNumber.cs" />
-    <Compile Include="Math\Equation.cs" />
-    <Compile Include="Events\InputEvents.cs" />
-    <Compile Include="Math\Operation.cs" />
-    <Compile Include="Global\Singleton.cs" />
-    <Compile Include="Input Output\NumberTextBoxController.cs" />
-    <Compile Include="Input Output\TextBoxController.cs" />
+    <Compile Include="IO\ClipboardManager.cs" />
+    <Compile Include="IO\ClipboardTextBoxController.cs" />
+    <Compile Include="IO\EquationTextBoxController.cs" />
+    <Compile Include="NumberEvents.cs" />
+    <Compile Include="Text\Constants.cs" />
+    <Compile Include="Calc\DisplayNumber.cs" />
+    <Compile Include="Calc\Equation.cs" />
+    <Compile Include="InputEvents.cs" />
+    <Compile Include="Calc\Operation.cs" />
+    <Compile Include="Utilities\Singleton.cs" />
+    <Compile Include="IO\NumberTextBoxController.cs" />
+    <Compile Include="IO\TextBoxController.cs" />
     <Compile Include="UIForm.cs">
       <SubType>Form</SubType>
     </Compile>

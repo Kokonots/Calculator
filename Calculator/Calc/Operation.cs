@@ -5,8 +5,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
+using Calculator.Text;
 
-namespace Calculator
+namespace Calculator.Calc
 {
     abstract class Operation
     {
@@ -22,7 +23,7 @@ namespace Calculator
     {
         public Division()
         {
-            symbol = DisplayText.DividedBy;
+            symbol = Constants.DividedBy;
         }
 
         public override (EquationAnswer, double) Calculate(double firstNumber, double secondNumber)
@@ -44,7 +45,7 @@ namespace Calculator
     {
         public Addition()
         {
-            symbol = DisplayText.Plus;
+            symbol = Constants.Plus;
         }
 
         public override (EquationAnswer, double) Calculate(double firstNumber, double secondNumber)
@@ -58,7 +59,7 @@ namespace Calculator
     {
         public Subtraction()
         {
-            symbol = DisplayText.Minus;
+            symbol = Constants.Minus;
         }
 
         public override (EquationAnswer, double) Calculate(double firstNumber, double secondNumber)
@@ -72,7 +73,7 @@ namespace Calculator
     {
         public Multiplication()
         {
-            symbol = DisplayText.Times;
+            symbol = Constants.Times;
         }
 
         public override (EquationAnswer, double) Calculate(double firstNumber, double secondNumber)

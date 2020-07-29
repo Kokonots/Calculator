@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace Calculator.Text
 {
-    class DisplayText
+    class Constants
     {
         // All the text that is used in the textboxes.
 

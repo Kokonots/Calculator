@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+using Calculator.IO;
+using Calculator.Calc;
+using Calculator.Text;
+
 namespace Calculator
 {
 
@@ -18,7 +22,7 @@ namespace Calculator
         public Main()
         {
             InitializeComponent();
-
+            
             // Link up the Textbox Controllers with the Textbox Controls.
             this.equationTextBoxController = new EquationTextBoxController(EquationTextBox);
             this.clipboardTextBoxController = new ClipboardTextBoxController(ClipboardTextBox);
@@ -123,7 +127,7 @@ namespace Calculator
             // . and ,
             else if (e.KeyChar == 44 || e.KeyChar == 46)
             {
-                InputEvents.CharacterEntered(DisplayText.DecimalSeparator);
+                InputEvents.CharacterEntered(Constants.DecimalSeparator);
             }
             // * and x and X
             else if (e.KeyChar == 42 || e.KeyChar == 88 || e.KeyChar == 120)

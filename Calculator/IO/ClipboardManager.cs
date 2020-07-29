@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator
+using Calculator.Text;
+using Calculator.Calc;
+
+namespace Calculator.IO
 {
     class ClipboardManager
     {
@@ -28,8 +31,8 @@ namespace Calculator
             // Get text from the clipboard.
             // Replace , with . and − with - so the string can be properly read as a number.
             string latestText = Clipboard.GetText();
-            latestText = latestText.Replace(DisplayText.Comma, DisplayText.DecimalSeparator);
-            latestText = latestText.Replace(DisplayText.Minus, DisplayText.Negative);
+            latestText = latestText.Replace(Constants.Comma, Constants.DecimalSeparator);
+            latestText = latestText.Replace(Constants.Minus, Constants.Negative);
 
             // If the clipboard text is a number, and it's a new number (not pasted just earlier).
             // Then pass the number to the display and show a message that a number has been pasted.
@@ -40,7 +43,7 @@ namespace Calculator
 
                 //InputEvents.NumberEntered(latestText);
 
-                //OutputEvents.UpdateClipboardMessage(String.Format(DisplayText.PasteFromClipboard, latestText));
+                //OutputEvents.UpdateClipboardMessage(String.Format(Constants.PasteFromClipboard, latestText));
             }
         }
 
@@ -61,7 +64,7 @@ namespace Calculator
             Clipboard.SetText(validAnswer);
             NumberEvents.CopiedToClipboard(validAnswer);
 
-            //OutputEvents.UpdateClipboardMessage(String.Format(DisplayText.CopyToClipboard, result));
+            //OutputEvents.UpdateClipboardMessage(String.Format(Constants.CopyToClipboard, result));
 
             //Need to save the copied value so it won't be pasted back into the calculator.
             lastPastedValue = validAnswer;

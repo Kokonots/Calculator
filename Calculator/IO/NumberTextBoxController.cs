@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator
+using Calculator.Text;
+
+namespace Calculator.IO
 {
     class NumberTextBoxController : TextBoxController
     {
@@ -19,7 +21,7 @@ namespace Calculator
         // This textbox always displays a 0 rather than nothing on reset.
         protected override void ClearText()
         {
-            textBox.Text = DisplayText.Zero;
+            textBox.Text = Constants.Zero;
         }
 
         // Can be not a number in the case of division by 0.

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Calculator.Subtraction subtraction1 = new Calculator.Subtraction();
-            Calculator.Multiplication multiplication1 = new Calculator.Multiplication();
-            Calculator.Division division1 = new Calculator.Division();
-            Calculator.Addition addition1 = new Calculator.Addition();
+            Calculator.Calc.Subtraction subtraction1 = new Calculator.Calc.Subtraction();
+            Calculator.Calc.Multiplication multiplication1 = new Calculator.Calc.Multiplication();
+            Calculator.Calc.Division division1 = new Calculator.Calc.Division();
+            Calculator.Calc.Addition addition1 = new Calculator.Calc.Addition();
             this.OneButton = new System.Windows.Forms.Button();
             this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.ThreeButton = new System.Windows.Forms.Button();
@@ -612,9 +612,9 @@
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button NegativeButton;
 
-        private EquationTextBoxController equationTextBoxController;
-        private NumberTextBoxController numberTextBoxController;
-        private ClipboardTextBoxController clipboardTextBoxController;
+        private Calculator.IO.EquationTextBoxController equationTextBoxController;
+        private Calculator.IO.NumberTextBoxController numberTextBoxController;
+        private Calculator.IO.ClipboardTextBoxController clipboardTextBoxController;
         
     }
 }

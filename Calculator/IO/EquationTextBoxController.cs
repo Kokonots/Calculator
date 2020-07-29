@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator
+using Calculator.Calc;
+using Calculator.Text;
+
+namespace Calculator.IO
 {
     class EquationTextBoxController : TextBoxController
     {
@@ -21,7 +24,7 @@ namespace Calculator
         void OnCalculated(EquationAnswer answer, double number)
         {
             string equationMessage = string.Format("{0} {1} {2} {3} ",
-                Equation.Instance.Operand1, Equation.Instance.Operation.Symbol, Equation.Instance.Operand2, DisplayText.EqualsSign);
+                Equation.Instance.Operand1, Equation.Instance.Operation.Symbol, Equation.Instance.Operand2, Constants.EqualsSign);
             textBox.Text = equationMessage;
         }
 

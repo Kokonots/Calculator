@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+using Calculator.Utilities;
+using Calculator.Text;
+
+namespace Calculator.Calc
 {
     class DisplayedNumber : Singleton<DisplayedNumber>
     {
@@ -62,7 +65,7 @@ namespace Calculator
             switch (answer)
             {
                 case EquationAnswer.DivideBy0:
-                    SetNumber(DisplayText.DividedByZero);
+                    SetNumber(Constants.DividedByZero);
                     break;
                 default:
                     SetNumber(number.ToString());
@@ -94,7 +97,7 @@ namespace Calculator
             if (startNewNumber)
             {
                 // The new number should be "0.", not "."
-                Number = DisplayText.Zero + DisplayText.DecimalSeparator.ToString();
+                Number = Constants.Zero + Constants.DecimalSeparator.ToString();
 
                 startNewNumber = false;
             }
@@ -102,15 +105,15 @@ namespace Calculator
             else
             {
                 // If there already is a . in the number, do nothing.
-                if (Number.Contains(DisplayText.DecimalSeparator))
+                if (Number.Contains(Constants.DecimalSeparator))
                     return;
 
                 // If the current number is "-" that should become "-0." not "-."
-                if (Number.Equals(DisplayText.Negative.ToString()))
-                    Number += DisplayText.Zero;
+                if (Number.Equals(Constants.Negative.ToString()))
+                    Number += Constants.Zero;
 
                 // Add the separator on the end.
-                Number += DisplayText.DecimalSeparator.ToString();
+                Number += Constants.DecimalSeparator.ToString();
             }
         }
 
@@ -126,7 +129,7 @@ namespace Calculator
             // But we can only check that if displayNumber has at least 1 character.
             if (Number.Length > 0)
             {
-                if (char.Parse(Number.Substring(0, 1)) == DisplayText.Negative)
+                if (char.Parse(Number.Substring(0, 1)) == Constants.Negative)
                 {
                     setToPositive = true;
 
@@ -136,7 +139,7 @@ namespace Calculator
                     // or if all that's left is a 0, 
                     // reset the displayed number to 0.
                     if (Number.Length < 1 ||
-                        Number.Equals(DisplayText.Zero))
+                        Number.Equals(Constants.Zero))
                     {
                         ResetNumber();
                     }
@@ -147,10 +150,10 @@ namespace Calculator
             if (!setToPositive)
             {
                 // A "0" should become "-" not "-0"
-                if (Number.Equals(DisplayText.Zero))
-                    AddCharacter(DisplayText.Negative);
+                if (Number.Equals(Constants.Zero))
+                    AddCharacter(Constants.Negative);
                 else
-                    Number = DisplayText.Negative.ToString() + Number;
+                    Number = Constants.Negative.ToString() + Number;
             }
         }
 
@@ -175,7 +178,7 @@ namespace Calculator
                 //bool startCount = false;
                 //foreach (char character in correctedDecimalNumber)
                 //{
-                //    if (character == DisplayText.DecimalSeparator)
+                //    if (character == Constants.DecimalSeparator)
                 //        startCount = true;
                 //    else if (startCount)
                 //        decimalCount++;
@@ -184,7 +187,7 @@ namespace Calculator
                 //Console.WriteLine(decimalPlaces);
                 //while (decimalCount < decimalPlaces)
                 //{
-                //    correctedDecimalNumber += DisplayText.Zero;
+                //    correctedDecimalNumber += Constants.Zero;
                 //    decimalCount++;
                 //}
 
@@ -198,7 +201,7 @@ namespace Calculator
         void RemoveCharacter()
         {
             //No need to remove the characters from "Division by 0" one by one
-            if (Number.Equals(DisplayText.DividedByZero))
+            if (Number.Equals(Constants.DividedByZero))
             {
                 ResetNumber();
                 return;
@@ -209,7 +212,7 @@ namespace Calculator
 
             // If the number is now empty or just a 0, reset the displayed number.
             if (Number.Length < 1 ||
-                Number.Equals(DisplayText.Zero))
+                Number.Equals(Constants.Zero))
             {
                 ResetNumber();
             }
@@ -223,7 +226,7 @@ namespace Calculator
         // Resets to 0.
         void ResetNumber()
         {
-            SetNumber(DisplayText.Zero);
+            SetNumber(Constants.Zero);
         }
     }
 }

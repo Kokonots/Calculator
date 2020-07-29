@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator
+using Calculator.Text;
+
+namespace Calculator.IO
 {
     class ClipboardTextBoxController : TextBoxController
     {
@@ -19,7 +21,7 @@ namespace Calculator
 
         void OnPastedFromClipboard(string number)
         {
-            string clipboardMessage = String.Format(DisplayText.PasteFromClipboard,
+            string clipboardMessage = String.Format(Constants.PasteFromClipboard,
                 number);
             textBox.Text = clipboardMessage;
         }
@@ -31,7 +33,7 @@ namespace Calculator
             if (number.Equals(string.Empty))
                 clipboardMessage = string.Empty;
             else
-                clipboardMessage = String.Format(DisplayText.CopyToClipboard,
+                clipboardMessage = String.Format(Constants.CopyToClipboard,
                 number);
 
             textBox.Text = clipboardMessage;

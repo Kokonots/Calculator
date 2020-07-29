@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Calculator.Calc;
+using Calculator.IO;
+
 namespace Calculator
 {
     static class Program
